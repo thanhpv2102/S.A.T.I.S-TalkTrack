@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+}
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #007ACC;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+#recordButton {
+    background-color: #007ACC;
+}
+#recordButton:hover {
+    background-color: #0069D9;
+}
+#stopButton {
+    background-color: #D9534F;
+}
+#stopButton:disabled {
+    background-color: #D9534F;
+    cursor: not-allowed;
+}
+audio {
+    display: block;
+    margin: 20px auto;
+}
