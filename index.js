@@ -11,24 +11,26 @@ navigator.mediaDevices.getUserMedia({audio: true})
     recorder.ondataavailable = e => {
         chunks.push(e.data);
     };
-    recorder.onstop = e => {
-        const blob = new Blob(chunks, {type: 'audio/webm'});
+    recorder.onstop = async () => {
+        const blob = new Blob(chunks, {type: 'audio/wav'});
         const url = URL.createObjectURL(blob);
         audio.src = url;
-
         const formData = new FormData();
-        formData.append('audio_file', blob, 'audio.wav');
-        formData.append('transcript', 'đàn gà mới nở lông vàng mát dịu mắt đen sáng ngời');
-        formData.append('num_channels', 1);
-        formData.append('sample_rate', 16000);
+        formData.append('file', blob, 'audio.wav');
 
-        fetch('https://6bb5-43-239-223-87.ngrok.io/predict', {
-        method: 'POST',
-        body: formData,
-        })
-        .then(response => console.log(response.text))
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
+        // const metadata = {
+        //     transcript: 'test',
+        //     num_channels: '1',
+        //     sample_rate: '16000',
+        //   };
+        // formData.append('metadata', JSON.stringify(metadata));
+
+        const response = await fetch('https://d56b-43-239-223-87.ngrok-free.app/predict', {
+            method: 'POST',
+            body: formData,
+            });
+        
+        console.log(response);
         };
 })
 .catch(error => {
