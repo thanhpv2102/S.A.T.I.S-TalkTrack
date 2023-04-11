@@ -22,7 +22,7 @@ navigator.mediaDevices.getUserMedia({audio: true})
         formData.append('num_channels', 1);
         formData.append('sample_rate', 16000);
 
-        fetch('http://6bb5-43-239-223-87.ngrok.io/predict', {
+        fetch('https://6bb5-43-239-223-87.ngrok.io/predict', {
         method: 'POST',
         body: formData,
         })
