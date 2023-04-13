@@ -7,16 +7,17 @@ const audio = document.getElementById('audio');
 
 navigator.mediaDevices.getUserMedia({audio: true})
 .then(stream => {
-    recorder = new MediaRecorder(stream);
+    const mimeType = 'audio/webm; codecs=opus';
+    recorder = new MediaRecorder(stream, { mimeType });
     recorder.ondataavailable = e => {
         chunks.push(e.data);
     };
     recorder.onstop = async () => {
-        const blob = new Blob(chunks, {type: 'audio/wav'});
+        const blob = new Blob(chunks, {type: 'audio/webm'});
         const url = URL.createObjectURL(blob);
         audio.src = url;
         const formData = new FormData();
-        formData.append('file', blob, 'audio.wav');
+        formData.append('file', blob, 'audio.webm');
 
         // const metadata = {
         //     transcript: 'test',
@@ -25,7 +26,7 @@ navigator.mediaDevices.getUserMedia({audio: true})
         //   };
         // formData.append('metadata', JSON.stringify(metadata));
 
-        const response = await fetch('https://d56b-43-239-223-87.ngrok-free.app/predict', {
+        const response = await fetch('https://ad7f-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
             });
