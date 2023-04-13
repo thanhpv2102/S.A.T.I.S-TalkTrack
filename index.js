@@ -4,6 +4,7 @@ let chunks = [];
 const recordButton = document.getElementById('recordButton');
 const stopButton = document.getElementById('stopButton');
 const audio = document.getElementById('audio');
+const recognizedText = document.getElementById('recognizedText');
 
 navigator.mediaDevices.getUserMedia({audio: true})
 .then(stream => {
@@ -26,12 +27,13 @@ navigator.mediaDevices.getUserMedia({audio: true})
         //   };
         // formData.append('metadata', JSON.stringify(metadata));
 
-        const response = await fetch('https://ad7f-43-239-223-87.ngrok-free.app/predict', {
+        const response = await fetch('https://9930-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
             });
-        
-        console.log(response);
+        chunks = []
+        console.log(response.json());
+        recognizedText.innerHTML = response.json().prediction;
         };
 })
 .catch(error => {
