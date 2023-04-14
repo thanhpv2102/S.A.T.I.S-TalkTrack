@@ -27,7 +27,7 @@ navigator.mediaDevices.getUserMedia({audio: true})
         //   };
         // formData.append('metadata', JSON.stringify(metadata));
 
-        fetch('https://61d6-43-239-223-87.ngrok-free.app/predict', {
+        fetch('https://9764-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
             }).then(response => {
