@@ -27,13 +27,13 @@ navigator.mediaDevices.getUserMedia({audio: true})
         //   };
         // formData.append('metadata', JSON.stringify(metadata));
 
-        const response = await fetch('https://9930-43-239-223-87.ngrok-free.app/predict', {
+        const response = await fetch('https://0d64-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
             });
         chunks = []
         console.log(response.json());
-        recognizedText.innerHTML = response.json().prediction;
+        recognizedText.innerHTML = response.json().transcription + '-' + response.json().emotion;
         };
 })
 .catch(error => {
