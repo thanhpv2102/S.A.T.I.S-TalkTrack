@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Training</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/easy-pie-chart/2.1.6/jquery.easypiechart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flot/0.8.3/jquery.flot.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="flex-content">
+        <ul class="breadcrumb">
+            <li class="active">Phân tích chi tiết</li>
+        </ul>
+
+        <div class="well primary ">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Tỷ lệ khách hàng hài lòng</h3>
+                    <div class="flot-wrapper" id="IQ-interaction">
+                        <div class="small text-center y-axis">Tỷ lệ (%)</div>
+                        <div class="flot-placeholder"></div>
+                        <div class="small text-center">Tháng</div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Số lượng cuộc gọi nhân viên đạt yêu cầu</h3>
+                    <div class="flot-wrapper" id="virtual-agent">
+                        <div class="small text-center y-axis">Số cuộc gọi</div>
+                        <div class="flot-placeholder"></div>
+                        <div class="small text-center">Tháng</div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/.well-->
+
+        <br/>
+
+        <div class="well wds-well secondary-info" style="padding: 10px; background-color:#E9ECEF">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="h1"><b class="text-muted">901</b></div>
+                    <strong>Số lượng cuộc gọi</strong>
+                    <div class="h3">Đã được đánh giá</div>
+                </div><!--/.span-->
+                <div class="col-md-3">
+                    <div id="successful-interaction-chart" class="chart" data-percent="73"><span>73%</span></div>
+                    <div class="inline-block">
+                        <div class="h3">Số cuộc gọi đạt <br> điều kiện</div>
+                        <strong></strong>
+                    </div>
+                </div><!--/.span-->
+                <div class="col-md-3">
+                    <p class="fancy"><span class="fancy-percent">5%</span>Tỉ lệ cuộc gọi <br /><b>không đánh giá được</b></p>
+                    <p class="fancy"><span class="fancy-percent">61</span>Số cuộc gọi <br /><b>chưa được đánh giá</b></p>
+                </div><!--/.span-->
+                <div class="col-md-3">
+                    <div class="h1"><b class="text-muted">4:32</b></div>
+                    <b>-40s</b><br>
+                    <strong>Thời lượng cuộc gọi trung bình</strong>
+                </div><!--/.span-->
+            </div>
+        </div><!--/.secondary-info-->
+        <br>
+        <br>
+        <div class="col-md-12 col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-4" style="text-align: center;
+                        justify-content: center;">
+                            <div id="satisfaction-chart" class="chart chart-big" data-percent="70">
+                                <span><h1>70%</h1></span>
+                            </div>
+                            <div class="inline-block">
+                                <div class="h3" style="margin:0">Tỷ lệ nhân viên <br> đạt yêu cầu</div>
+                            </div>
+                        </div><!--/.span-->
+                        <div class="col-8">
+                            <section>
+                                <div class="medium">Tỷ lệ cuộc gọi bị ngắt máy giữa chừng</div>
+                                <div class="h2" style="margin:0;">3%</div>
+                                <div class="flot-placeholder-small" id="drop-off-rate">
+                                </div>
+                            </section>
+                            <section>
+                                <div class="medium">Tỷ lệ cuộc gọi chất lượng thấp (khó nghe, quá nhiều tiếng ồn)</div>
+                                <div class="h2" style="margin:0;">2%</div>
+                                <div class="flot-placeholder-small" id="handover-rate">
+                                </div>
+                            </section>
+                        </div><!--/.span-->
+                    </div>
+                </div><!-- /.panel-body -->
+            </div><!-- /.panel panel-default -->
+        </div>
+        <br><br><br>
+
+    </div><!--/.row-->
+    
+    </div><!--/.flexcontent-->
+    </div><!--/.flex-container-->
+    <script src="index.js"></script>
+    <!-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/custom.js"></script>
+javascript 
+<script src="js/owl.carousel.js"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script> -->
+</body>
+
+</html>

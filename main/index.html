@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <title>Trang chủ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background: white;
+            margin: 0;
+            font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+            color: #fff;
+            padding-left: 220px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+
+        main {
+            position: relative;
+        }
+
+        .menu {
+            background: #13A25D;
+            height: 100vh;
+            width: 220px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 5;
+            outline: none;
+        }
+
+        .menu ul {
+            list-style: none;
+            padding: 0.5em 0;
+            padding-top: 10vh;
+            vertical-align: middle;
+            overflow: auto;
+            margin: 0;
+        }
+
+        .menu ul li {
+            padding: 1em 1em 1em 4em;
+            margin: 1.2em;
+            font-size: 0.9em;
+            font-weight: regular;
+            color: white;
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: auto 20px;
+            transition: all 0.15s linear;
+            cursor: pointer;
+        }
+
+        .menu ul li.icon-noti {
+            background-image: url("icon_noti.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-ttho {
+            background-image: url("icon_ttho.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-vcho {
+            background-image: url("icon_vcho.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-logout {
+            background-image: url("icon_logout.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-cart {
+            background-image: url("icon_cart.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-bill {
+            background-image: url("icon_bill.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-account {
+            background-image: url("icon_account.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-transaction {
+            background-image: url("icon_transaction.png");
+            background-size: 30px;
+        }
+
+        .menu ul li.icon-ntrt {
+            background-image: url("icon_ntrt.png");
+            background-size: 30px;
+        }
+
+        .menu ul li:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .menu ul li:focus {
+            outline: none;
+        }
+
+        @media screen and (max-width: 900px) and (min-width: 550px) {
+            body {
+                padding-left: 90px;
+            }
+
+            .menu {
+                width: 90px;
+            }
+
+            .menu ul li {
+                height: 60px;
+                background-position: center center;
+                background-size: 30px auto;
+                position: relative;
+            }
+
+            .menu ul li span {
+                opacity: 0;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 0.2em 0.5em;
+                border-radius: 4px;
+                top: 50%;
+                left: 80px;
+                transform: translate3d(-15px, -50%, 0);
+                transition: all 0.15s ease-in-out;
+            }
+
+            .menu ul li span:before {
+                content: '';
+                width: 0;
+                height: 0;
+                position: absolute;
+                top: 50%;
+                left: -5px;
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent;
+                border-right: 5px solid rgba(0, 0, 0, 0.5);
+                transform: translateY(-50%);
+            }
+
+            .menu ul li:hover span {
+                opacity: 1;
+                transform: translate3d(0px, -50%, 0);
+            }
+
+            .nav-item {
+                display: inline;
+                font-size: 0.8em;
+                line-height: 0.8em;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            #user_name {
+                display: none;
+            }
+
+            body {
+                padding-left: 0;
+            }
+
+            .menu {
+                width: 230px;
+                box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
+                transform: translate3d(-230px, 0, 0);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .menu .smartphone-menu-trigger {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                left: 100%;
+                background: #13A25D;
+            }
+
+            .menu .smartphone-menu-trigger:before,
+            .menu .smartphone-menu-trigger:after {
+                content: '';
+                width: 50%;
+                height: 2px;
+                background: #fff;
+                border-radius: 10px;
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+
+            .menu .smartphone-menu-trigger:after {
+                top: 55%;
+                transform: translate3d(-50%, -50%, 0);
+            }
+
+            .menu ul li {
+                padding: 1em 1em 1em 3em;
+                font-size: 0.9em;
+            }
+
+            .menu:focus {
+                transform: translate3d(0, 0, 0);
+                box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
+            }
+
+            .menu:focus .smartphone-menu-trigger {
+                pointer-events: none;
+            }
+
+            .navbar-brand {
+                margin-left: 40px;
+            }
+
+            .nav-item {
+                display: inline;
+                font-size: 0.8em;
+                line-height: 0.8em;
+                padding: 0;
+                margin: 0;
+            }
+
+            .logo {
+                width: 60px;
+            }
+        }
+
+        .nav-item {
+            padding: 0;
+            margin: 0;
+        }
+
+        .link-nav {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .link-nav:hover {
+            color: white;
+        }
+
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #13A25D;
+            width: 60px;
+            height: 60px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40vh;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        iframe {
+            background: url("loading.svg") center center no-repeat;
+        }
+    </style>
+    <script src="jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #E9ECEF;">
+        <a class="navbar-brand" href="../"><img width="160" class="logo" src="../images/S.A.T.I.D-LOGO.png" /></a>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <span class="navbar-text" id="user_name">
+                    Thành Phạm
+                </span>
+            </li>
+        </ul>
+
+    </nav>
+    <nav class="menu" tabindex="0">
+        <div class="smartphone-menu-trigger"></div>
+        <ul>
+            <li tabindex="0" class="icon-noti"><span><a class="link-nav" target="page" href="../noti/">Đánh giá cuộc gọi</a></span></li>
+            <li tabindex="0" class="icon-cart"><span><a class="link-nav" target="page" href="../analysis/">Phân tích chất lượng</a></span></li>
+            <li tabindex="0" class="icon-bill"><span><a class="link-nav" target="page" href="../training/">Đào tạo</a></span></li>
+            <li tabindex="0" class="icon-logout"><span><a class="link-nav" id="logout" target="page" href="../">Đăng xuất</a></span></li>
+        </ul>
+    </nav>
+    <script>
+        const signupFormBtn = document.getElementById("logout");
+        signupFormBtn.onclick = (()=>{
+            window.location.href = '../'; //one level up
+            return false;
+          });
+    </script>
+    <main>
+        <iframe src="../bill/" id="page-iframe" name="page" frameBorder="0"></iframe>
+    </main>
+</body>
+
+</html>
