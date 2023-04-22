@@ -36,7 +36,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
          const formData = new FormData();
          formData.append('file', blob, 'audio.webm');
 
-         fetch('https://27fb-43-239-223-87.ngrok-free.app/predict', {
+         fetch('https://e696-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
          }).then(response => {
