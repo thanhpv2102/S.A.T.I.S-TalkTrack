@@ -132,50 +132,61 @@
     <hr />
   </div>
   <div class="call-detail" style="display:none">
-    <hr />
-    <button type="button" class="btn btn-warning" id="come_back">Quay lại</button>
-    <hr />
-    <h1>Chi tiết cuộc gọi</h1>
-    <h1>Nội dung audio</h1>
-    <img src="audio.png" alt="Image" style="display: block; margin: 0 auto; width: 80%;">
-    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width:100%">
+    <button type="button" class="btn btn-warning" id="come_back" style="margin-left: 5%;">Quay lại</button>
+    <hr>
+    <h1 style="margin-left: 5%;">Chi tiết cuộc gọi</h1>
+    <audio id="audio" style="text-align: center;" controls>
+      <source src="demo.wav" type="audio/wav">
+    </audio>
+    <hr>
+    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width: 90%;margin-left: 5%;">
       <thead class="text-light" style="background-color: #13A25D">
         <tr>
           <th>Thời điểm</th>
           <th>Người nói</th>
           <th>Nội dung</th>
           <th>Cảm xúc</th>
+          <th>Từ ngữ thô tục</th>
+          <th>Từ khóa</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>0:01</td>
+          <td>0:00</td>
           <td>Nhân viên</td>
-          <td>Xin chào quý khách, em có thể hỗ trợ gì cho quý khách ạ?</td>
+          <td>Em chào anh ạ, tổ chăm sóc khách hàng của VNPAY xin nghe ạ!</td>
           <td class="text-success">Vui vẻ</td>
-          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+          <td>-</td>
+          <td>Chăm sóc khách hàng</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-1">Nghe thử</button></td>
         </tr>
         <tr>
-          <td>0:05</td>
+          <td>0:04</td>
           <td>Khách hàng</td>
-          <td>Tôi muốn mở thẻ ngân hàng</td>
+          <td>Mình muốn mở ví VNPAY thì phải làm như thế nào ạ?</td>
           <td>Bình thường</td>
-          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+          <td>-</td>
+          <td>Mở ví</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-2">Nghe thử</button></td>
         </tr>
         <tr>
-          <td>0:10</td>
+          <td>0:08</td>
           <td>Nhân viên</td>
-          <td>Vâng, em sẽ chuyển máy cho nhân viên</td>
-          <td>Tức giận</td>
-          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+          <td>Dạ vâng anh chỉ cần tải app VNPAY về và thực hiện các bước đăng kí là được ạ.</td>
+          <td>Bình thường</td>
+          <td>-</td>
+          <td>Tải app, đăng kí</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-3">Nghe thử</button></td>
         </tr>
         <tr>
-          <td>0:15</td>
-          <td>Nhân viên</td>
-          <td>Vâng, em sẽ chuyển máy cho nhân viên</td>
-          <td class="text-danger">Tức giận</td>
-          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+          <td>0:12</td>
+          <td>Khách hàng</td>
+          <td>Dạ vâng, mình cảm ơn nhé!</td>
+          <td class="text-success">Vui vẻ</td>
+          <td>-</td>
+          <td>Cảm ơn</td>
+          <td><button class="btn btn-warning btn-detail" id="btn-4">Nghe thử</button></td>
         </tr>
       </tbody>
     </table>

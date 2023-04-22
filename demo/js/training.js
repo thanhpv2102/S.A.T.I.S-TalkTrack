@@ -1,16 +1,3 @@
-var iframe = document.getElementById("personal_frame");
-var elmnt = iframe.contentWindow.document.getElementById("GVHoDnN7csEvH0hc");
-elmnt.addEventListener("click", function(){
-
-   $('#personal').hide();
-   $('#training').fadeIn();   
-});
-
-$('#come_back').click(function () {
-   $(this).parent().hide();
-   $('#personal').fadeIn();
-});
-
 let recorder;
 let chunks = [];
 
@@ -18,6 +5,11 @@ const recordButton = document.getElementById('recordButton');
 const stopButton = document.getElementById('stopButton');
 const audio = document.getElementById('audio');
 const recognizedText = document.getElementById('recognizedText');
+
+const prediction = document.getElementById('prediction');
+const emo = document.getElementById('emo');
+const keywords = document.getElementById('keywords');
+const hatespeech_words = document.getElementById('hatespeech_words');
 
 stopButton.disabled = true;
 stopButton.style.display = "none";
@@ -52,6 +44,10 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                // var decision = jsonData.decision;
                // var review = jsonData.review;
                console.log(jsonData)
+               prediction.innerHTML = '<b>Nội dung văn bản:</b> ' + jsonData.prediction
+               emo.innerHTML = '<b>Cảm xúc:</b> ' + jsonData.emo
+               keywords.innerHTML = '<b>Từ khóa:</b> ' + jsonData.keywords
+               hatespeech_words.innerHTML = '<b>Từ ngữ thô tục:</b> ' + jsonData.hatespeech_words
                Swal.fire({
                   title: jsonData.result,
                   html: jsonData.review,
