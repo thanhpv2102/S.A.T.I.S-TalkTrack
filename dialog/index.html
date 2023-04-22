@@ -1,129 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-	  <style>
-		.table_header{
-   
-    color: #1d8645;
-    text-align: center;
-    padding-top: 0;
-    padding-bottom: 0;
 
-}
-.table_name{
-    font-size: 30px;
-    font-weight: bold; 
-    font-family: Arial, Helvetica, sans-serif;
-}
-.table1{
-    align-self: center;
-    text-align: center;
-    padding-top: 10px;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 50px;
-}
-th, td{
-    padding: 15px;
-    text-align: left;
-    border-width: 1px;
-    border-color: #13a25d;
-}
-th {
-    background-color: #1d8645;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-table {
-    width: 100%;
-    border: #1d8645 solid;
-  }
+<head>
+  <title>Login V18</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+  <script src="https://cdn.datatables.net/rowreorder/1.2.7/js/dataTables.rowReorder.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/rowreorder/1.2.7/css/rowReorder.dataTables.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+  <script src="https://cdn.datatables.net/plug-ins/1.10.21/sorting/date-eu.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.datatables.net/v/bs4/dt-1.10.21/rg-1.1.2/datatables.min.css" />
+  <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.21/rg-1.1.2/datatables.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-tr:nth-child(even) {background-color: #f2f2f2;}
-tr:hover {background-color: rgb(124, 227, 160);}
-
-.logo2{
-    padding-right: 20px;
-    float: right;
-    width: 250px;
-}
-.input_bt{
-    padding-top: 20px;
-    padding-left: 20px;
-}
-.input_audio {
-
-    border-radius: 15px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-  }
-	  </style>
-   </head>
-   <body>
-      <!--header section start -->
-<!--Phần header đến đó là giống nhau giữa các trang, dưới đây mới là quan trọng-->
-<div class="table_header">
-   <p class ="table_name"><b>NỘI DUNG AUDIO</b></p>
-</div>
-<img src="audio.png" alt="Image" style="display: block; margin: 0 auto; width: 80%;">
-      
-      <div class="table_header">
-         <p class ="table_name"><b>BẢNG CHI TIẾT CUỘC ĐỐI THOẠI</b></p>
-      </div>
-      <div class="table1">
-         <table>
-            <tr>
-              <th>Thời điểm</th>
-              <th>Người nói</th>
-              <th>Nội dung</th>
-              <th>Cảm xúc</th>
-            </tr>
-            <tr>
-             <td>0:00</td>
-             <td>Nhân viên</td>
-             <td>Hello em, chị đứng đây từ chiều</td>
-             <td>Vui vẻ</td>
-            </tr>
-            <tr>
-               <td>0:10</td>
-               <td>Khách hàng</td>
-               <td>Ứ ứ chị ơi em chưa thấy ai xấu mà nói giọng hay như chị!</td>
-               <td>Vui vẻ</td>
-              </tr>
-            <tr>
-               <td>0:16</td>
-               <td>Nhân viên</td>
-               <td>Ủa em! em khen như khen vậy</td>
-               <td>Bình thường</td>
-              </tr>
-            <tr>
-               <td>0:20</td>
-               <td>Khách hàng</td>
-               <td>Meo meo meo meo, trả lại tâm trí tôi đây</td>
-               <td>Tức giận</td>
-              </tr>
-
-          </table>
-
-      </div>
-      
-         
+<body>
+  <div class="call-container">
+    <h1>Danh sách cuộc gọi</h1>
+    <br>
+    <div style="text-align:center; color: black; font-weight:bold">
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="all" checked>&nbsp;Tất cả&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="0">&nbsp;Chưa đánh giá&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="2">&nbsp;Đã đánh giá, đạt yêu cầu&nbsp;&nbsp;&nbsp;
+      </label>
+      <label class="radio-inline text-dark">
+        <input type="radio" name="optradio" value="3">&nbsp;Đã đánh giá, không đạt yêu cầu&nbsp;&nbsp;&nbsp;
+      </label>
+    </div>
+    <hr>
+    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width:100%">
+      <thead class="text-light" style="background-color: #13A25D">
+        <tr>
+          <th>Tên cuộc gọi</th>
+          <th>Nhân viên xử lý</th>
+          <th>Đầu số gọi đi</th>
+          <th>Đầu số bắt máy</th>
+          <th>Trạng thái</th>
+          <th>Chất lượng</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="text-center text-light bg-dark" colspan="7">Thứ bảy, ngày 22/4/2023</th>
+        </tr>
+        <tr>
+          <td>ABCD0001.wav</td>
+          <td>Thành Phạm</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-success font-weight-bold">Đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0012.wav</td>
+          <td>Thu Huyền</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-success font-weight-bold">Đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0013.wav</td>
+          <td>Thái Hòa</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <th class="text-center text-light bg-dark" colspan="7">Chủ nhật, ngày 23/4/2023</th>
+        </tr>
+        <tr>
+          <td>ABCD0014.wav</td>
+          <td>Ngọc Quân</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-success font-weight-bold">Đã đánh giá</td>
+          <td class="text-danger font-weight-bold">Không đạt</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0015.wav</td>
+          <td>Duy Khánh</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0016.wav</td>
+          <td>Thành Phạm</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+        <tr>
+          <td>ABCD0017.wav</td>
+          <td>Thu Huyền</td>
+          <td>0981234567</td>
+          <td>0987654321</td>
+          <td class="text-warning font-weight-bold">Chưa đánh giá</td>
+          <td>-</td>
+          <td><button class="btn btn-warning btn-detail">Xem chi tiết</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <hr />
+  </div>
+  <div class="call-detail" style="display:none">
+    <hr />
+    <button type="button" class="btn btn-warning" id="come_back">Quay lại</button>
+    <hr />
+    <h1>Chi tiết cuộc gọi</h1>
+    <h1>Nội dung audio</h1>
+    <img src="audio.png" alt="Image" style="display: block; margin: 0 auto; width: 80%;">
+    <table id="tb_call" class="display nowrap table table-bordered table-hover" style="width:100%">
+      <thead class="text-light" style="background-color: #13A25D">
+        <tr>
+          <th>Thời điểm</th>
+          <th>Người nói</th>
+          <th>Nội dung</th>
+          <th>Cảm xúc</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0:01</td>
+          <td>Nhân viên</td>
+          <td>Xin chào quý khách, em có thể hỗ trợ gì cho quý khách ạ?</td>
+          <td class="text-success">Vui vẻ</td>
+          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:05</td>
+          <td>Khách hàng</td>
+          <td>Tôi muốn mở thẻ ngân hàng</td>
+          <td>Bình thường</td>
+          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:10</td>
+          <td>Nhân viên</td>
+          <td>Vâng, em sẽ chuyển máy cho nhân viên</td>
+          <td>Tức giận</td>
+          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+        </tr>
+        <tr>
+          <td>0:15</td>
+          <td>Nhân viên</td>
+          <td>Vâng, em sẽ chuyển máy cho nhân viên</td>
+          <td class="text-danger">Tức giận</td>
+          <td><button class="btn btn-warning btn-detail">Nghe thử</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <hr />
+    <hr />
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="index.js"></script>
 </body>
-<!-- footer section end -->
+
 </html>

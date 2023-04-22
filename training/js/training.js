@@ -1,3 +1,16 @@
+var iframe = document.getElementById("personal_frame");
+var elmnt = iframe.contentWindow.document.getElementById("GVHoDnN7csEvH0hc");
+elmnt.addEventListener("click", function(){
+
+   $('#personal').hide();
+   $('#training').fadeIn();   
+});
+
+$('#come_back').click(function () {
+   $(this).parent().hide();
+   $('#personal').fadeIn();
+});
+
 let recorder;
 let chunks = [];
 

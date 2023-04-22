@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+	  <style>
+		.table_header{
+   
+    color: #1d8645;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+.table_name{
+    font-size: 30px;
+    font-weight: bold; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+.table1{
+    align-self: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 50px;
+}
+th, td{
+    padding: 15px;
+    text-align: left;
+    border-width: 1px;
+    border-color: #13a25d;
+}
+th {
+    background-color: #1d8645;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+table {
+    width: 100%;
+    border: #1d8645 solid;
+  }
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr:hover {background-color: rgb(124, 227, 160);}
+
+.logo2{
+    padding-right: 20px;
+    float: right;
+    width: 250px;
+}
+.input_bt{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.input_audio {
+
+    border-radius: 15px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+	  </style>
+   </head>
+   <body>
+      <!--header section start -->
+<!--Phần header đến đó là giống nhau giữa các trang, dưới đây mới là quan trọng-->
+<div class="table_header">
+   <p class ="table_name"><b>NỘI DUNG AUDIO</b></p>
+</div>
+<img src="audio.png" alt="Image" style="display: block; margin: 0 auto; width: 80%;">
+      
+      <div class="table_header">
+         <p class ="table_name"><b>BẢNG CHI TIẾT CUỘC ĐỐI THOẠI</b></p>
+      </div>
+      <div class="table1">
+         <table>
+            <tr>
+              <th>Thời điểm</th>
+              <th>Người nói</th>
+              <th>Nội dung</th>
+              <th>Cảm xúc</th>
+            </tr>
+            <tr>
+             <td>0:00</td>
+             <td>Nhân viên</td>
+             <td>Hello em, chị đứng đây từ chiều</td>
+             <td>Vui vẻ</td>
+            </tr>
+            <tr>
+               <td>0:10</td>
+               <td>Khách hàng</td>
+               <td>Ứ ứ chị ơi em chưa thấy ai xấu mà nói giọng hay như chị!</td>
+               <td>Vui vẻ</td>
+              </tr>
+            <tr>
+               <td>0:16</td>
+               <td>Nhân viên</td>
+               <td>Ủa em! em khen như khen vậy</td>
+               <td>Bình thường</td>
+              </tr>
+            <tr>
+               <td>0:20</td>
+               <td>Khách hàng</td>
+               <td>Meo meo meo meo, trả lại tâm trí tôi đây</td>
+               <td>Tức giận</td>
+              </tr>
+
+          </table>
+
+      </div>
+      
+         
+</body>
+<!-- footer section end -->
+</html>

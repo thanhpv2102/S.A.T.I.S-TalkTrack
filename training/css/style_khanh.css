@@ -214,11 +214,6 @@ button {
     padding: 0px;
 }
 
-.layout_padding {
-     padding-top: 50px;
-     padding-bottom: 0px;
-}
-
 /* header section start */
 
 .header_section {
@@ -553,7 +548,6 @@ button {
 .events_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
 }
 .events_taital{
     width: 100%;
@@ -567,7 +561,6 @@ button {
 .events_section_2 {
     width: 80%;
     float: left;
-    margin-top: 40px;
     padding-left: 20%;
 }
 .events_bg {
