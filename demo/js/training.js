@@ -28,7 +28,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
          const formData = new FormData();
          formData.append('file', blob, 'audio.webm');
 
-         fetch('https://d25c-43-239-223-87.ngrok-free.app/predict', {
+         fetch('https://4a64-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
          }).then(response => {
@@ -44,17 +44,10 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                // var decision = jsonData.decision;
                // var review = jsonData.review;
                console.log(jsonData)
-               prediction.innerHTML = '<b>Nội dung văn bản:</b> ' + jsonData.prediction
-               emo.innerHTML = '<b>Cảm xúc:</b> ' + jsonData.emo
+               prediction.innerHTML = '<b>Nội dung văn bản:</b> ' + jsonData.transcription
+               emo.innerHTML = '<b>Cảm xúc:</b> ' + jsonData.emotion
                keywords.innerHTML = '<b>Từ khóa:</b> ' + jsonData.keywords
                hatespeech_words.innerHTML = '<b>Từ ngữ thô tục:</b> ' + jsonData.hatespeech_words
-               Swal.fire({
-                  title: jsonData.result,
-                  html: jsonData.review,
-                  icon: jsonData.decision,
-               }).then(function () {
-                  // window.location.reload(true);
-               });
             })
             .catch(error => {
                // Handle any errors here
