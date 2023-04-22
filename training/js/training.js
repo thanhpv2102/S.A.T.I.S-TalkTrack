@@ -36,7 +36,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
          const formData = new FormData();
          formData.append('file', blob, 'audio.webm');
 
-         fetch('https://e248-43-239-223-87.ngrok-free.app/predict', {
+         fetch('https://27fb-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
          }).then(response => {
@@ -51,6 +51,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                // recognizedText.innerHTML = jsonData.transcription + '-' + jsonData.emotion;
                // var decision = jsonData.decision;
                // var review = jsonData.review;
+               console.log(jsonData)
                Swal.fire({
                   title: jsonData.result,
                   html: jsonData.review,
