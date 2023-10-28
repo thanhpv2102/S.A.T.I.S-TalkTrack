@@ -8,10 +8,13 @@ $('#come_back').click(function () {
     $('.call-container').fadeIn();
 });
 
-var audio1 = new Audio('1.wav');
-var audio2 = new Audio('2.wav');
-var audio3 = new Audio('3.wav');
-var audio4 = new Audio('4.wav');
+var audio1 = new Audio('tts_1.wav');
+var audio2 = new Audio('1.wav');
+var audio3 = new Audio('tts_2.wav');
+var audio4 = new Audio('2.wav');
+var audio5 = new Audio('tts_3.wav');
+var audio6 = new Audio('3.wav');
+var audio7 = new Audio('tts_4.wav');
 
 $('#btn-1').click(function () {
   audio1.play()
@@ -27,4 +30,16 @@ $('#btn-3').click(function () {
 
 $('#btn-4').click(function () {
   audio4.play()
+});
+
+$('#btn-5').click(function () {
+  audio5.play()
+});
+
+$('#btn-6').click(function () {
+  audio6.play()
+});
+
+$('#btn-7').click(function () {
+  audio7.play()
 });
