@@ -8,8 +8,8 @@ const recognizedText = document.getElementById('recognizedText');
 
 const prediction = document.getElementById('prediction');
 const emo = document.getElementById('emo');
-const keywords = document.getElementById('keywords');
-const hatespeech_words = document.getElementById('hatespeech_words');
+// const keywords = document.getElementById('keywords');
+// const hatespeech_words = document.getElementById('hatespeech_words');
 
 stopButton.disabled = true;
 stopButton.style.display = "none";
@@ -28,7 +28,7 @@ navigator.mediaDevices.getUserMedia({ audio: true })
          const formData = new FormData();
          formData.append('file', blob, 'audio.webm');
 
-         fetch('https://8844-43-239-223-87.ngrok-free.app/predict', {
+         fetch('https://f7d2-43-239-223-87.ngrok-free.app/predict', {
             method: 'POST',
             body: formData,
          }).then(response => {
@@ -46,8 +46,8 @@ navigator.mediaDevices.getUserMedia({ audio: true })
                console.log(jsonData)
                prediction.innerHTML = '<b>Nội dung văn bản:</b> ' + jsonData.transcription
                emo.innerHTML = '<b>Cảm xúc:</b> ' + jsonData.emotion
-               keywords.innerHTML = '<b>Từ khóa:</b> ' + jsonData.keywords
-               hatespeech_words.innerHTML = '<b>Từ ngữ thô tục:</b> ' + jsonData.hatespeech_words
+               // keywords.innerHTML = '<b>Từ khóa:</b> ' + jsonData.keywords
+               // hatespeech_words.innerHTML = '<b>Từ ngữ thô tục:</b> ' + jsonData.hatespeech_words
             })
             .catch(error => {
                // Handle any errors here
